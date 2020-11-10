@@ -1,28 +1,41 @@
 \chapter{Data and Methods}\label{sec:methods}
-
+The purpose of this project was to evaluate the parameter thresholds for tracking TCs in ICON simulation data. In the following section the settings used for generating the simulation data and the algorithm itself will be explained.
 \section{Simulation Data}\label{sec:data}
+The North Atlantic basin with its surrounding area ( TODO xx1 - xx2 lon and yy1 - yy2 lat) % TODO find out exact domain 
+was simulated from the beginning of May until the beginning of December.
+Two different kinds of time lagged ensembles were used. Both used ERA5 reanalysis data for the initial weather state and the monthly boundary conditions. The first however, labeled "ref", used the first day of each month at 6:00 a.m. (TODO !confirm with Bernhard ) % TODO confirm time lagged ensemble with bernhard
+as the monthly boundary conditions. The second ensemble, labeld "rm", used monthly rolling mean boundary conditions based on the same reanalysis data.
+The members within each of these two ensembles were created by varying the initial weather state of the simulation. Namely each of the first 10 days of May were used as initial conditions for a separate simulation run. 
+Finally this results in 20 separate simulation runs that can be searched for TCs.
 \begin{enumerate}
-    \item explain data that is being used
-    \item ICON simulation
-    \item remapped data
-    \item time lagged ensemble
-    \item simulation duration of 8 months
-    \item 10 ensemble members with different re-analaysis data initial conditions
-    \item experiment data ref and rm
+    \item ICON simulation % TODO explain ICON
+    \item remapped data % TODO explain remapping
+    \item DONE explain data that is being used
+    \item DONE time lagged ensemble
+    \item DONE simulation duration of 8 months
+    \item DONE 10 ensemble members with different re-analaysis data initial conditions
+    \item DONE experiment data ref and rm
 \end{enumerate}
 \section{Algorithm}
-\subsection{Previous Algorithm}
+An existing algorithm developed by Bernhard Enz and inspired by \cite{orig-tracking} was improved in regards to runtime, robustness and readability. The gained speed was used in order to run the algorithm on the same simulation data but with different threshold values that decide wether a TC was found or not. By comparing the different results reasonable thresholds and the importance of the different criteria were determined.
+\subsection{TC candidate search}
+
+The algorithm consists of two steps. In the first step all time-steps are scanned separately for TC candidates. The whole domain is searched for TCs by applying the following criteria:
+\subsubsection*{Sea Level Pressure Minimum}
+As outlined in Sec.~\ref{sec:physics} TCs are low pressure systems. In fact some of the lowest pressures on earth were measured inside the eyes of TCs. 
+
 \begin{enumerate}
     \item Explain Criteria
     \item mention long running time
 \end{enumerate}
-\subsection{Improved Algorithm}
 \begin{enumerate}
     \item Vectorization of Operations especially slp minimum finding
     \item Parallelization of Experiments and Members
     \item variation of parameters
     \item ? reordering of criteria (hope there will be time)
 \end{enumerate}
+\subsection{Creating TC tracks from previously found TC candidates}
+
 \section{Tracking Data Analysis}
 \subsection{Algorithm output data format}
 \begin{enumerate}
