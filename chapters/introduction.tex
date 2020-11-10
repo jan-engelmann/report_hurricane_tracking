@@ -13,14 +13,7 @@ While tropical cyclones form and intensify above the ocean, they have the larges
 Due to these enormous implications for society and opportunities to save lives and money, active research is happening on tropical cyclone impact reduction. With an unsure impact of climate change on tropical cyclone frequency and intensity and a trend of urbanization on the American east-coast, improving the understanding of tropical cyclones is of great importance.
 
 \section{Underlying Physics}\label{sec:physics}
-Tropical Cyclones can be classified using the Saffir-Simpson wind scale. It is defined by the maximum wind observed in the cyclone. Due to their characteristic structure this wind usually occurs at the eyewall. This choice is motivated by the strong correlation between wind speeds and the inflicted damages.\cite{simpson} The exact categorization can be seen in table \ref{tab:simpson-scale}.
-Their occurrence frequency is displayed in Fig. \ref{fig:cat-climatology} 
-\begin{figure}[h]
-\caption{Example of a parametric plot ($\sin (x), \cos(x), x$)}
-\centering
-\includegraphics[width=0.5\textwidth]{img/cum-average-cat.png}
-\label{fig:cat-climatology}
-\end{figure}
+Tropical Cyclones can be classified using the Saffir-Simpson wind scale. It is defined by the maximum wind observed in the cyclone. Due to their characteristic structure this wind usually occurs at the eyewall. This choice is motivated by the strong correlation between wind speeds and the inflicted damages.\cite{simpson} The exact categorization can be seen in table~\ref{tab:simpson-scale}.
 
 \begingroup
 \setlength{\tabcolsep}{10pt} % Default value: 6pt
@@ -37,14 +30,41 @@ category     & wind speed {[}m/s{]}     &  & name                & wind speed {[
 4 & 58--70    &  &                     &           \\
 5 & $\geq$ 70 &  &                     &           \\ \cline{1-2} \cline{4-5} 
 \end{tabular}
-\caption{Simpson scale defined by 1-minute maximum sustained winds}
+\caption{Simpson scale defined by 1-minute maximum sustained winds\cite{simpson}}
 \label{tab:simpson-scale}
 \end{table}
 \endgroup
 
+Their occurrence frequency is displayed in Fig.~\ref{fig:cat-climatology} 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.7\textwidth]{img/cum-average-cat.png}
+\caption{Average cumulative number of storms in the Atlantic. Named systems are mostly tropical storms but can also be tropical depressions.\cite{climatology}}
+\label{fig:cat-climatology}
+\end{figure}
+
+Tropical Cyclones are rotating low pressure systems that exhibit a warm core. They rotate around a pressure minimum with low wind speeds which is enclosed by the eyewall which in turn is the radius of maximum wind. The rotation around the center happens in different bands of updraft that are alternated with rain bands. Finally the the warm updraft in the center cools down on its way to the top. Resulting in a cold outflow at the top of the storm. This structure is depicted in Fig.~\ref{fig:tc-structure}.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\textwidth]{img/hurricane-structure.png}
+\caption{Structure of a Tropical Cyclone in the Northern hemisphere~\cite{hurricane-structure}}
+\label{fig:tc-structure}
+\end{figure}
+In order for a storm to develop a number of TC genesis criteria have to be met. Not all of them have to be satisfied but they do offer a good indicator for the probability of storm formation.
+The criteria are as follows:
+\begin{itemize}
+\item sea surface temperature above 26.5\textdegree C to at least a depth of 50m
+\item sufficiently moist mid-troposphere for deep convection
+\item Appreciable moisture flux at the ocean-air interface to sustain a conditionally unstable thermodynamic environment (Montgomery \& Smith, 2017)
+\item A distance of at least 5 from the equator, so that the Coriolis effect is strong enough to initiate the cyclone's rotation (Palm\'{e}n, 1948).
+\item A pre-existing weather disturbance with sufficient vorticity and convergence, e.g. a tropical easterly wave.
+\item Low vertical wind shear between the surface and the upper troposphere
+\end{itemize}
+
 \begin{enumerate}
 \item DONE Classification between tc, tornado, tropical depression...
-\item Mention climatology and categorisation
+\item DONE Mention climatology and categorisation
+\item DONE Storm characterisitics
 \item Genesis criteria
 \item Carnot Cycle
 \item Shortly mentioning WISHE Paradigm
