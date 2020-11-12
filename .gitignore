@@ -1,0 +1,6 @@
+*.bak[0-9]*
+.texpadtmp/
+chapters/indent.log
+img/ethlogo-eps-converted-to.pdf
+img/iac_logo-eps-converted-to.pdf
+indent.log
