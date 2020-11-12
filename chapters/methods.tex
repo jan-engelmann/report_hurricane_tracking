@@ -41,6 +41,7 @@ Latitude-Longitude grid in order to facilitate distance calculations.
 Finally this results in 20 separate simulation runs that can be searched for
 TCs.
 %TODO RENAME STEPS TO TRACKING AND STITCHING AND THEN EXPLAIN
+%TODO mention the amazing job I did in regards to vectorization
 \section{Algorithm}
 An existing algorithm developed by Bernhard Enz and inspired by \cite{orig-tracking} was improved in regards to runtime, robustness and
 readability. The gained speed was used in order to run the algorithm on the
@@ -139,38 +140,32 @@ simulation runs.
 
 \section{Tracking Data Analysis}
 \subsection{Algorithm output data format}
-
+The output of the algorithm is a pandas dataframe with one row per unique TC per timestep. Its columns are described in Tab.~\ref{tab:output-data}.
 \begingroup
-%\setlength{\tabcolsep}{10pt} % Default value: 6pt
-%\renewcommand{\arraystretch}{1.2} % Default value: 1
 \begin{table}[]
-\centering
-\begin{tabular}{| p{0.3\linewidth} | p{0.27\linewidth} | p{0.38\linewidth }|}
-\hline
-  &              &                                \\[-0.5em]
-\textbf{information}  & \textbf{columns}             & \textbf{description}                                                                   \\[5pt] \hline
-  &              &                                \\[-0.5em]
-timestamp             & date                         & time and date of the TC entry                                                          \\[5pt]
-position              & lon\_idx, lat\_idx, lon, lat & position of the found TC in longitude/latitude grid indices and coordinates            \\[5pt]
-intensity &
-  maxwind, curr\_cat, cat &
-  maximum wind within a 100km distance, snapshot category at the current time, maximum category of the corresponding TC \\[5pt]
-parameter combination & param\_id                    & id of the parameter combination used for tracking                                      \\[5pt]
-unique TC identifier  & tc\_id                       & unique TC identifier across all parameter combinations and simulation runs             \\[5pt]
-simulation run        & mem, exp                     & variables specifying the member and boundary conditions of the analysed simulation run \\[5pt]
-genesis sea level temperature &
-  genesis\_sst &
-  genesis sea level temperature of the particular TC, identical across all time entries of a TC. \\[5pt] \hline
-\end{tabular}
-\caption{description of the columns of the output pandas dataframe}
-\label{tab:output-data}
+	\centering
+	\begin{tabular}{| p{0.3\linewidth} | p{0.27\linewidth} | p{0.38\linewidth }|}
+		\hline
+		                              &                              &                                                                                        \\[-0.5em]
+		\textbf{information}          & \textbf{columns}             & \textbf{description}                                                                   \\[5pt] \hline
+		                              &                              &                                                                                        \\[-0.5em]
+		timestamp                     & date                         & time and date of the TC entry                                                          \\[5pt]
+		position                      & lon\_idx, lat\_idx, lon, lat & position of the found TC in longitude/latitude grid indices and coordinates            \\[5pt]
+		intensity                     &
+		maxwind, curr\_cat, cat       &
+		maximum wind within a 100km distance, snapshot category at the current time, maximum category of the corresponding TC                                 \\[5pt]
+		parameter combination         & param\_id                    & id of the parameter combination used for tracking                                      \\[5pt]
+		unique TC identifier          & tc\_id                       & unique TC identifier across all parameter combinations and simulation runs             \\[5pt]
+		simulation run                & mem, exp                     & variables specifying the member and boundary conditions of the analysed simulation run \\[5pt]
+		genesis sea level temperature &
+		genesis\_sst                  &
+		genesis sea level temperature of the particular TC, identical across all time entries of a TC.                                                        \\[5pt] \hline
+	\end{tabular}
+	\caption{description of the columns of the output pandas dataframe \cite{pandas}}
+	\label{tab:output-data}
 \end{table}
 \endgroup
 
-
-\begin{enumerate}
-	\item Quickly explaining what the algorithm outputs
-\end{enumerate}
 \subsection{Filtering out noise}
 After the tracking and stitching steps are completed, the algorithm results can
 still be improved by filtering the results. The largest improvement was
@@ -181,27 +176,18 @@ energy source, especially when they form. It has been shown that the large
 majority has a SST over 25.5\degree C \cite{sst-paper}. Therefore it is
 expected that no reasonable TCs are filtered out when requiring a genesis SST
 of at least 24\degree C. However as can be seen in Fig.~\ref{fig:sst-effect}
-a large part of the unwanted tracks in the north of the domain are removed.
-% TODO insert sst effect figure
-
+a large part of the unwanted tracks in the North of the domain are removed.
+% TODO use figures here and in general with reasonable and elaborated parameters only
+\begin{figure}[ht]
+	\begin{minipage}[t]{0.48\textwidth}
+		\includegraphics[width = \textwidth]{img/all_tracks.png}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.48\textwidth}
+		\includegraphics[width = \textwidth]{img/all_tracks_sst.png}
+	\end{minipage}
+	\caption{Comparison of all tracks without and with the SST criterion on the left and right}
+	\label{fig:sst-effect}
+\end{figure}
 \subsection{Analysis of variation of parameters}
-Here I will discuss the analyses performed for different parameter
-combinations.
-would be grateful for some advice on how to evaluate validity of a parameter
-value and what analyses are interesting.
-\subsubsection{slpdis}
-\subsubsection{vormin}
-\subsubsection{temdif}
-\subsubsection{temdis}
-\subsubsection{winddis}
-\subsubsection{maxhgt}
-
-\begin{enumerate}
-	\item DONE Explain Criteria
-	\item mention long running time
-\end{enumerate}
-\begin{enumerate}
-	\item Vectorization of Operations especially slp minimum finding
-	\item Parallelization of Experiments and Members
-	\item variation of parameters
-\end{enumerate}
+the following comparisons were performed

@@ -1,11 +1,33 @@
 \chapter{Results}\label{sec:results}
-\section{Importance of different criteria}
-\begin{enumerate}
-    \item which criteria have a large impact on the found tcs
-    \item what are interesting thresholds
-    \item Include fascinating plots
-\end{enumerate}
-\section{Recommended parameter combination}
-\begin{enumerate}
-    \item propose combination of parameters for robust search
-\end{enumerate}
+
+\section{Comparison of the Warm Core Criterion and the Vorticity Threshold}
+In order to compare the importance of the warm core criterion with the vorticity threshold, TCs were tracked with parameter combinations of varying relative strength of the two criteria. To be concrete, all nine combinations of the parameters in Tab.~\ref{tab:vor-tem-comparison} were used.
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\textbf{parameter} & \textbf{unit} & \textbf{values}        \\ \hline
+		slpdis             & m             & 100000   \\
+		vormin             & 1/s           & 1e-6, 1e-5, 1e-4       \\
+		temdif             & K             & 0.5, 1 ,1.5       \\
+		temdis             & m             & 200000 \\ \hline
+	\end{tabular}
+	\caption{Parameter combinations used for the comparison}
+	\label{tab:vor-tem-comparison}
+\end{table}
+
+The 
+%\section{Importance of different criteria}
+
+%\begin{enumerate}
+%    \item which criteria have a large impact on the found tcs
+%    \item what are interesting thresholds
+%    \item Include fascinating plots
+%\end{enumerate}
+
+
+%\section{Recommended parameter combination}
+%\begin{enumerate}
+%    \item propose combination of parameters for robust search
+%\end{enumerate}
