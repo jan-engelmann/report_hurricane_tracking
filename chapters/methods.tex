@@ -165,29 +165,3 @@ The output of the algorithm is a pandas dataframe with one row per unique TC per
 	\label{tab:output-data}
 \end{table}
 \endgroup
-
-\subsection{Filtering out noise}
-After the tracking and stitching steps are completed, the algorithm results can
-still be improved by filtering the results. The largest improvement was
-achieved by requiring a certain sea surface temperature at TC genesis.
-\subsubsection*{Sea Surface Temperature Criterion}
-As outlined in Sec.~\ref{sec:physics} the TCs need warm ocean water as an
-energy source, especially when they form. It has been shown that the large
-majority has a SST over 25.5\degree C \cite{sst-paper}. Therefore it is
-expected that no reasonable TCs are filtered out when requiring a genesis SST
-of at least 24\degree C. However as can be seen in Fig.~\ref{fig:sst-effect}
-a large part of the unwanted tracks in the North of the domain are removed.
-% TODO use figures here and in general with reasonable and elaborated parameters only
-\begin{figure}[ht]
-	\begin{minipage}[t]{0.48\textwidth}
-		\includegraphics[width = \textwidth]{img/all_tracks.png}
-	\end{minipage}
-	\hfill
-	\begin{minipage}[t]{0.48\textwidth}
-		\includegraphics[width = \textwidth]{img/all_tracks_sst.png}
-	\end{minipage}
-	\caption{Comparison of all tracks without and with the SST criterion on the left and right}
-	\label{fig:sst-effect}
-\end{figure}
-\subsection{Analysis of variation of parameters}
-the following comparisons were performed

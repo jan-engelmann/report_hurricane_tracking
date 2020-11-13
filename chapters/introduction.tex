@@ -1,9 +1,9 @@
 \chapter{Introduction}\label{sec:introduction}
 \begin{enumerate}
-\item DONE Tcs are relevant for society due to their changing intensity and more people living on the coast
-\item They exhibit interesting physics (tiefdrucksysteme mit Warmcore)
-\item They are studied analytically, with field experiments and with simulations
-\item Here their climatology is analyzed by analyzing simulation data
+	\item DONE Tcs are relevant for society due to their changing intensity and more people living on the coast
+	\item They exhibit interesting physics (tiefdrucksysteme mit Warmcore)
+	\item They are studied analytically, with field experiments and with simulations
+	\item Here their climatology is analyzed by analyzing simulation data
 \end{enumerate}
 Tropical cyclones also known as Hurricanes or Typhoons are storms of extreme nature in many regards. Not only are they the most deadly and expensive natural catastrophes in the United States but also their physics is quite challenging with many open questions remaining.\cite{emanuel-summ}
 Finally they are very likely to play a crucial role in the global heat balance and moisture circulation.\cite{moisture-transport}\cite{global-heat}
@@ -19,62 +19,62 @@ Tropical Cyclones can be classified using the Saffir-Simpson wind scale. It is d
 \setlength{\tabcolsep}{10pt} % Default value: 6pt
 \renewcommand{\arraystretch}{1.5} % Default value: 1
 \begin{table}[hbt!]
-\centering
-\begin{tabular}{|c|c|c|c|c|}
-\cline{1-2} \cline{4-5}
-\multicolumn{2}{|c|}{\textbf{Tropical Cyclones}} &  & \multicolumn{2}{c|}{\textbf{Other tropical low pressure systems}} \\ \cline{1-2} \cline{4-5} 
-category     & wind speed {[}m/s{]}     &  & name                & wind speed {[}m/s{]}               \\ \cline{1-2} \cline{4-5} 
-1 & 33--42    &  & tropical depression & $\leq$ 17 \\
-2 & 43--49    &  & tropical storm      & 18--32    \\
-3 & 50--58    &  &                     &           \\
-4 & 58--70    &  &                     &           \\
-5 & $\geq$ 70 &  &                     &           \\ \cline{1-2} \cline{4-5} 
-\end{tabular}
-\caption{Simpson scale defined by 1-minute maximum sustained winds\cite{simpson}}
-\label{tab:simpson-scale}
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\cline{1-2} \cline{4-5}
+		\multicolumn{2}{|c|}{\textbf{Tropical Cyclones}} &                      & \multicolumn{2}{c|}{\textbf{Other tropical low pressure systems}}                                                  \\ \cline{1-2} \cline{4-5}
+		category                                         & wind speed {[}m/s{]} &                                                                   & name, category          & wind speed {[}m/s{]} \\ \cline{1-2} \cline{4-5}
+		1                                                & 33--42               &                                                                   & tropical depression, -1 & $\leq$ 17            \\
+		2                                                & 43--49               &                                                                   & tropical storm, 0       & 18--32               \\
+		3                                                & 50--58               &                                                                   &                         &                      \\
+		4                                                & 58--70               &                                                                   &                         &                      \\
+		5                                                & $\geq$ 70            &                                                                   &                         &                      \\ \cline{1-2} \cline{4-5}
+	\end{tabular}
+	\caption{Simpson scale defined by 1-minute maximum sustained winds \cite{simpson}. The category number of the other tropical low pressure systems was assigned by the author and will be used in the results section.}
+	\label{tab:simpson-scale}
 \end{table}
 \endgroup
 
-Their occurrence frequency is displayed in Fig.~\ref{fig:cat-climatology} 
+Their occurrence frequency is displayed in Fig.~\ref{fig:cat-climatology}
 \begin{figure}[ht]
-\centering
-\includegraphics[width=0.7\textwidth]{img/cum-average-cat.png}
-\caption{Average cumulative number of storms in the Atlantic. Named systems are mostly tropical storms but can also be tropical depressions.\cite{climatology}}
-\label{fig:cat-climatology}
+	\centering
+	\includegraphics[width=0.7\textwidth]{img/cum-average-cat.png}
+	\caption{Average cumulative number of storms in the Atlantic. Named systems are mostly tropical storms but can also be tropical depressions.\cite{climatology}}
+	\label{fig:cat-climatology}
 \end{figure}
 
 Tropical Cyclones are rotating low pressure systems that exhibit a warm core. They rotate around a pressure minimum with low wind speeds which is enclosed by the eyewall which in turn is the radius of maximum wind. The rotation around the center happens in different bands of updraft that are alternated with rain bands. Finally the the warm updraft in the center cools down on its way to the top. Resulting in a cold outflow at the top of the storm. This structure is depicted in Fig.~\ref{fig:tc-structure}.
 \begin{figure}[ht]
-\centering
-\includegraphics[width=0.8\textwidth]{img/hurricane-structure.png}
-\caption{Structure of a Tropical Cyclone in the Northern hemisphere~\cite{hurricane-structure}}
-\label{fig:tc-structure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{img/hurricane-structure.png}
+	\caption{Structure of a Tropical Cyclone in the Northern hemisphere~\cite{hurricane-structure}}
+	\label{fig:tc-structure}
 \end{figure}
 In order for a storm to develop a number of TC genesis criteria have to be met. Not all of them have to be satisfied but they do offer a good indicator for the probability of storm formation.
 The criteria are as follows:
 \begin{itemize}
-\item sea surface temperature above 26.5\degree C to at least a depth of 50m
-\item sufficiently moist mid-troposphere for deep convection
-\item Appreciable moisture flux at the ocean-air interface to sustain a conditionally unstable thermodynamic environment (Montgomery \& Smith, 2017)
-\item A distance of at least 5 from the equator, so that the Coriolis effect is strong enough to initiate the cyclone's rotation (Palm\'{e}n, 1948).
-\item A pre-existing weather disturbance with sufficient vorticity and convergence, e.g. a tropical easterly wave.
-\item Low vertical wind shear between the surface and the upper troposphere
+	\item sea surface temperature above 26.5\degree C to at least a depth of 50m
+	\item sufficiently moist mid-troposphere for deep convection
+	\item Appreciable moisture flux at the ocean-air interface to sustain a conditionally unstable thermodynamic environment (Montgomery \& Smith, 2017)
+	\item A distance of at least 5 from the equator, so that the Coriolis effect is strong enough to initiate the cyclone's rotation (Palm\'{e}n, 1948).
+	\item A pre-existing weather disturbance with sufficient vorticity and convergence, e.g. a tropical easterly wave.
+	\item Low vertical wind shear between the surface and the upper troposphere
 \end{itemize}
 
 \begin{enumerate}
-\item DONE Classification between tc, tornado, tropical depression...
-\item DONE Mention climatology and categorisation
-\item DONE Storm characterisitics
-\item Genesis criteria
-\item Carnot Cycle
-\item Shortly mentioning WISHE Paradigm
-\item Mention 1 or 2 of Heini Wernlis Publications
-\item use emanuel review paper and cloud dynamics course material
+	\item DONE Classification between tc, tornado, tropical depression...
+	\item DONE Mention climatology and categorisation
+	\item DONE Storm characterisitics
+	\item Genesis criteria
+	\item Carnot Cycle
+	\item Shortly mentioning WISHE Paradigm
+	\item Mention 1 or 2 of Heini Wernlis Publications
+	\item use emanuel review paper and cloud dynamics course material
 \end{enumerate}
 
 
 \section{Previous work on TC Tracking}\label{sec:tracking}
 \begin{enumerate}
-\item Mention work of Christoph Raible/Raibler from Bern regarding TC Tracking
-\item See what Heini Wernli has done
+	\item Mention work of Christoph Raible/Raibler from Bern regarding TC Tracking
+	\item See what Heini Wernli has done
 \end{enumerate}
