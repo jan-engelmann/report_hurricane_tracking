@@ -9,5 +9,4 @@
 
 \chapter*{Abstract}
  \addcontentsline{toc}{chapter}{Abstract}
-
-An existing algorithm for tracking tropical cyclones in ICON output was sped up. The increased speed was used in order to evaluate assumptions on characterizing parameters for TCs. These parameters were varied and the results compared.
+Tropical Cyclone (TC) tracking in simulation data requires parameter thresholds that specify the expected intensity of characterising features. This results in assumptions for a specific climate model that may or may not be justified. With the purpose of being able to run the algorithm with different parameter assumptions, an existing algorithm was optimised and a 70-fold speedup reached. This enabled experimentation with numerous different threshold combinations. It was found that correctly adjusting the warm core criterion is of central importance since it is essential for balancing the tracking of noise and early discovery of tropical cyclones. Furthermore including a requirement on the sea surface temperature during TC genesis made the algorithm more robust. Finally an analysis of the vorticity criterion suggested further investigation of its effectiveness.
