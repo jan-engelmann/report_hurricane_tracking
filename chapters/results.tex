@@ -1,6 +1,6 @@
 \chapter{Results}\label{sec:results}
 
-\section{Filtering out noise}
+\section{Filtering out noise}\label{sec:noise}
 After the tracking and stitching steps are completed, the algorithm results can
 still be improved by filtering the results. A large improvement was
 achieved by requiring a certain sea surface temperature at TC genesis.
@@ -32,6 +32,31 @@ Even with the application of the SST-criterion, unreasonable TC tracks remain. F
 	\caption{Set of unreasonable tracks over Wyoming and the surrounding states}
 	\label{fig:rogue-tracks}
 \end{figure}
+\section{Validating Results}
+In Sec.~\ref{sec:noise} it was found that with a sufficiently strong warm core condition the tracks appear in reasonable areas. Before comparing the algorithm output for different parameter combinations, it still remains to be shown that the produced tracks actually follow TCs and not other low pressure systems. For that purpose ten different storms were randomly chosen. For these storms the radial, tangential and vertical wind and the sea level pressure were visualised in the azimuthal mean. It was found that all storms qualitatively exhibit the physically expected structure that was described in Sec.~\ref{sec:physics}. The resulting plots for a representative storm can be seen in Fig.~\ref{fig:azimean}.
+
+\begin{figure}[b]
+\centering
+\begin{subfigure}{.5\linewidth}
+    \centering
+    \includegraphics[width=0.75\linewidth]{img/tight09279566radwind20130706T120000Z.eps}
+\end{subfigure}%
+\begin{subfigure}{.5\linewidth}
+    \centering
+    \includegraphics[width=0.75\linewidth]{img/tight09279566tanwind20130706T120000Z.eps}
+\end{subfigure}
+\begin{subfigure}{.5\linewidth}
+    \centering
+    \includegraphics[width=0.75\linewidth]{img/tight09279566verwind20130706T120000Z.eps}
+\end{subfigure}%
+\begin{subfigure}{.5\linewidth}
+    \centering
+    \includegraphics[width=0.75\linewidth]{img/tight09279566pres_msl20130706T120000Z.eps}
+\end{subfigure}
+\caption[short]{Azimuthal mean plots. From left to right and top to bottom: radial wind, tangential wind, vertical wind and sea level pressure.}
+\end{figure}
+
+
 \section{Variation of the Warm Core Criterion strength}
 With the aim of understanding the impact of different warm core criteria strengths, the resulting cyclone distributions for a range of different \textbf{temdif}s were compared. As can be seen in Fig.~\ref{fig:temdif-analysis}, a weaker warm core criterion leads to a distribution with more lower intensity storms. When comparing with the absolute counts it can be seen that this is the result from weaker storms being tracked for lower \textbf{temdif}s. Logically for TCs of category 2 and upwards, no difference in the counts is observed. Furthermore for \textbf{temdif}s larger than \unit[1]{K}, no tropical depressions which correspond to category -1 are tracked. It can therefore be concluded that the warm core criterion can be used very efficiently to filter out noise if only strong TCs are of interest.
 % TODO create plot that analyses category snapshots for tcs with max cat=2 and above
