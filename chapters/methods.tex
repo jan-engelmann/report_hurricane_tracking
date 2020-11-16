@@ -56,7 +56,7 @@ will be explained in the following sections.
 \subsection{TC candidate search}
 TC candidates are found by searching the simulated domain using several
 criteria. They are summarised in Tab.~\ref{tab:search-algo-summ} and will be
-explained in detail in the following sections.
+explained in detail in the following sections. 
 \begin{table}[h]
 	\centering
 	\begin{tabular}{|l|l|}
@@ -70,6 +70,13 @@ explained in detail in the following sections.
 		parameter}
 	\label{tab:search-algo-summ}
 \end{table}
+Before diving into functioning of the algorithm a quick explanation of how the existing algorithm was speed up will follow.
+
+\subsubsection*{Speeding up the candidate search}
+The speedup was achieved by removing almost all Python loops from the algorithm. The algorithm performs operations like minimum finding, comparison of all array elements with a threshold value and masking parts of an array. All of these operations are efficiently implemented in NumPy~\cite{numpy} and its scientific computing ecosystem. Since most of NumPy internal functions are implemented in the C/C++ programming language they make better use of the computing hardware and therefore run much faster than native Python code which needs to be interpreted while it is being run. The use of highly optimised low level code is called vectorisation.
+Furthermore the Python multiprocessing library was used to distribute the processing of different simulation runs to different processes.\newline
+Finally the output data format was changed to Pandas dataframes which come with rich statistical functionality for quick analysis of the resulting tracks.\newline
+The fundamental remodelling and speedup of the code amounts to the largest part of the time invested in this research project.
 
 \subsubsection*{Sea Level Pressure Minimum}
 As outlined in Sec.~\ref{sec:physics} TCs are low pressure systems. In fact
@@ -97,6 +104,7 @@ Only storms that have a warm core that is at least \textbf{temdif} degrees
 warmer than the environment, are kept as valid TC candidates. The latter
 specifies the side-length of the square with the storm in the middle which is
 defined as environment.
+
 \subsubsection*{Saving of TC information}
 At the end of each time-step the remaining candidates are saved with their
 corresponding date, time, position, maximum windspeed and sea level pressure in
