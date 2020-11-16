@@ -1,9 +1,4 @@
 \chapter{Conclusion}\label{sec:conclusion}
-This project significantly improved the speed and efficiency of a TC tracking algorithm. This speedup enables a comprehensive analysis of different parameter threshold settings. An exploratory data analysis revealed interesting aspects of the different tracking criteria as outlined before. The capability to quickly try different parameter combinations and the already produced tracking data empowers a wide range of further analysis steps. One idea would be to try to reduce \newline
-Furthermore the combination of several criteria is a perspective for continuing research and development. It would for instance be interesting to only track storms that satisfy the at least two of three given parameter threshold combinations.
-
-\begin{enumerate}
-    \item repeat most important findings
-    \item mention further algorithm ideas
-    \item suggest more elaborate parallelization with eg dask for improved simulation data reading
-\end{enumerate}
+This project significantly improved the speed and efficiency of a TC tracking algorithm. This speedup enables a comprehensive analysis of different parameter threshold settings. An exploratory data analysis revealed interesting aspects of the different tracking criteria as outlined before. The capability to quickly try different parameter combinations and the already produced tracking data empowers a wide range of further analysis steps. One idea would be to define a metric that measures the quality of the produced tracking data. This metric could be based on statistics from reanalysis data. \newline
+On the technical side the use of a high level library made for parallel computation could lead to an even better use of the computing resources. From initial screenings the Dask library \cite{dask} seemed promising. Especially the reading of data could be improved since now the 20 different processes that track TCs in the different simulation runs, access different files on the same disk. Using one process that reads data and feeds it to other process that analyse it, would reduce the disk handover time between processes.\newline
+Finally the combination of several criteria is a perspective for continuing research and development. It would for instance be interesting to only track storms that satisfy at least two of three given parameter threshold combinations. This might enable the algorithm to successfully avoid noise while already tracking TCs in their weak forming phases.
