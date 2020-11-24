@@ -6,12 +6,12 @@ still be improved by filtering the results. A large improvement was
 achieved by requiring a certain sea surface temperature at TC genesis.
 \subsection*{Sea Surface Temperature Criterion}
 As outlined in Sec.~\ref{sec:physics}, the TCs need warm ocean water as an
-energy source, especially when they form. It has been shown that the large
-majority has a SST over 25.5\degree C \cite{sst-paper}. Therefore it is
+energy source, when they form. It has been shown that the large
+majority has an SST over 25.5\degree C \cite{sst-paper}. Therefore it is
 expected that no reasonable TCs are filtered out when requiring a genesis SST
 of at least 24\degree C. However, as can be seen in Fig.~\ref{fig:sst-effect},
 a large part of the unwanted tracks in the North of the domain are removed.
-% TODO use figures here and in general with reasonable and elaborated parameters only
+% TODO ?? use figures here and in general with reasonable and elaborated parameters only
 \begin{figure}[ht]
 	\begin{minipage}[t]{0.48\textwidth}
 		\includegraphics[width = \textwidth]{img/all_tracks.png}
@@ -25,7 +25,8 @@ a large part of the unwanted tracks in the North of the domain are removed.
 \end{figure}
 
 \subsection*{Analysing geographically unreasonable tracks}
-Even with the application of the SST-criterion, unreasonable TC tracks remain. For instance the tracks over Wyoming shown in Fig.~\ref{fig:rogue-tracks} should not be so frequent. To determine the parameters responsible for this, the 20 parameter combinations that account for the large majority of these, share the common feature that they all corresponded to the same weak warm core criterion. They had a \textbf{temdif} of \unit[0.5]{\degree C} and a \textbf{temdis} of \unit[400]{km}. Therefore if only a very low temperature difference is required for an area that can be larger than smaller-sized TCs, low pressure systems that do not correspond to tropical cyclones are tracked. While this may not be surprising, it does emphasise the importance of a well-trimmed warm core criterion.
+Even with the application of the SST-criterion, unreasonable TC tracks remain. For instance the tracks over Wyoming shown in Fig.~\ref{fig:rogue-tracks} should not be so frequent. To determine the parameters responsible for this, the 20 parameter combinations that account for the large majority of these, share the common feature that they all correspond to the same weak warm core criterion. They had a \textbf{temdif} of \unit[0.5]{\degree C} and a \textbf{temdis} of \unit[400]{km}. Therefore if only a very low temperature difference is required for an area that can be larger than smaller-sized TCs, low pressure systems that do not correspond to tropical cyclones are tracked. While this may not be surprising, it does emphasise the importance of a well-trimmed warm core criterion.
+% TODO Change Category -1 to tropical depression and 0 to tropical storm
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.7\textwidth]{img/rogue_tracks.eps}
@@ -33,7 +34,7 @@ Even with the application of the SST-criterion, unreasonable TC tracks remain. F
 	\label{fig:rogue-tracks}
 \end{figure}
 \section{Validating Results}
-In Sec.~\ref{sec:noise}, it was found that with a sufficiently strong warm core condition the tracks appear in reasonable areas. Before comparing the algorithm output for different parameter combinations, it still remains to be shown that the produced tracks actually follow TCs and not other low pressure systems. For that purpose, ten different storms were randomly chosen. For these storms the radial, tangential and vertical wind and the sea level pressure were visualised in the azimuthal mean. It was found that all storms qualitatively exhibit the physically expected structure that was described in Sec.~\ref{sec:physics}. The resulting plots for a representative storm can be seen in Fig.~\ref{fig:azimean}.
+In Sec.~\ref{sec:noise}, it was found that with a sufficiently strong warm core condition the tracks appear in reasonable areas. Before comparing the algorithm output for different parameter combinations, it still remains to be shown that the produced tracks actually follow TCs and not other low pressure systems. For this purpose, ten different storms were randomly chosen. For these storms the radial, tangential and vertical wind and the sea level pressure were visualised in the azimuthal mean. It was found that all storms qualitatively exhibit the physically expected structure that was described in Sec.~\ref{sec:physics}. The resulting plots for a representative storm can be seen in Fig.~\ref{fig:azimean}.
 
 \begin{figure}[ht]
 \centering
@@ -53,15 +54,15 @@ In Sec.~\ref{sec:noise}, it was found that with a sufficiently strong warm core 
     \centering
     \includegraphics[width=0.75\linewidth]{img/tight09279566pres_msl20130706T120000Z.eps}
 \end{subfigure}
-\caption[short]{Azimuthal mean plots. From left to right and top to bottom: radial wind, tangential wind, vertical wind and sea level pressure.}
+\caption[short]{Azimuthal mean plots. From left to right and top to bottom: radial wind, tangential wind, vertical wind and sea level pressure. The vertical black line marks the radius of maximum wind.}
 \label{fig:azimean}
 \end{figure}
-
+% TODO ADD TEMPERATURE ANOMALY
 
 
 \section{Variation of the Warm Core Criterion strength}
-With the aim of understanding the impact of different warm core criteria strengths, the resulting cyclone distributions for a range of different \textbf{temdif}s were compared. As can be seen in Fig.~\ref{fig:temdif-analysis}, a weaker warm core criterion leads to a distribution with more lower-intensity storms. When comparing with the absolute counts, it can be seen that this is the result from weaker storms being tracked for lower \textbf{temdif}s. Logically, for TCs of category 2 and upwards, no difference in the counts is observed. Furthermore for \textbf{temdif}s larger than \unit[1]{K}, no tropical depressions which correspond to category -1 are tracked. It can therefore be concluded that the warm core criterion can be used very efficiently to filter out noise if only strong TCs are of interest.
-% TODO create plot that analyses category snapshots for tcs with max cat=2 and above
+With the aim of understanding the impact of different warm core criteria strengths, the resulting cyclone distributions for a range of different \textbf{temdif} values were compared. As can be seen in Fig.~\ref{fig:temdif-analysis}, a weaker warm core criterion leads to a distribution with more lower-intensity storms. When comparing with the absolute counts, it can be seen that this is the result from weaker storms being tracked for lower \textbf{temdif}s. Logically, for TCs of category 2 and upwards, no difference in the counts is observed. Furthermore for \textbf{temdif}s larger than \unit[1]{K}, no tropical depressions which correspond to category -1 are tracked. It can therefore be concluded that the warm core criterion can be used very efficiently to filter out noise if only strong TCs are of interest.
+
 \begin{figure}[ht]
 	\begin{minipage}[t]{0.48\textwidth}
 		\includegraphics[width = \textwidth]{img/max_cat_distr_temdifs.eps}
@@ -70,13 +71,14 @@ With the aim of understanding the impact of different warm core criteria strengt
 	\begin{minipage}[t]{0.48\textwidth}
 		\includegraphics[width = \textwidth]{img/max_cat_counts_temdifs.eps}
 	\end{minipage}
-	\caption{Maximum TC category histograms for different \textbf{temdif} parameters. Each histogram on the left has unit norm. The right plot shows the absolute counts of TCs. The X-axis describes the TC categories as defined in Tab~\ref{tab:simpson-scale}.}
+	\caption{Maximum TC category histograms for different \textbf{temdif} parameters. Each histogram on the left has unit norm. The right plot shows the absolute counts of TCs. The X-axis describes the TC categories as defined in Tab~\ref{tab:simpson-scale}. Comparing the normalised distributions on the left with the absolute counts on the right shows the good agreement of the algorithm for different values of \textbf{temdif} on strong TCs and the heavier weight on lower category storms for the lower \textbf{temdif} values.}
 	\label{fig:temdif-analysis}
 \end{figure}
+% TODO move description to text and write about lower tailed and higher tailed distribtuion or sth else pseudo statistical
 
 
 \section{Comparison of the Warm Core Criterion and the Vorticity Threshold}\label{sec:warmcore-var}
-In order to compare the importance of the warm core criterion with the vorticity threshold, TCs were tracked with parameter combinations of varying relative strength of the two criteria. Specifically, all nine combinations of the parameters in Tab.~\ref{tab:vor-tem-comparison} were used.
+In order to compare the importance of the warm core criterion with the vorticity threshold, only the TC tracks that were found using the parameter combinations from Tab.~\ref{tab:vor-tem-comparison} were analysed. These combinations were chosen because they correspond to different relative strengths of the two criteria.
 
 \begin{table}[ht]
 	\centering
@@ -91,25 +93,26 @@ In order to compare the importance of the warm core criterion with the vorticity
 	\caption{Parameter combinations used for the comparison}
 	\label{tab:vor-tem-comparison}
 \end{table}
-% TODO really think about this and the max category influence of vorticity ask Bernhard
-It was expected that the vorticity threshold should influence the distribution of tracked TCs only if a weak warm core criterion is applied. However, as can be seen in Fig.~\ref{fig:temdif-vormin-comp}, even with a very weak warm core criterion does the vorticity threshold not influence the storm intensity distributions. A comparison for different values of \textbf{temdif} and an analysis of the impact of the vorticity criterion on the storm lifetime can be found in the Appendix.
 
+It was expected that the vorticity threshold should influence the distribution of tracked TCs only if a weak warm core criterion is applied. This was hypothesised because most low pressure systems with strong warm cores should exhibit the necessary minimum vorticity while weak warm core systems might not have a strong enough rotating motion. However, as can be seen in Fig.~\ref{fig:temdif-vormin-comp}, even with a very weak warm core criterion does the vorticity threshold not influence the storm intensity distributions. A comparison for different values of \textbf{temdif} and an analysis of the impact of the vorticity criterion on the storm lifetime can be found in the Appendix.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.7\textwidth]{img/curr_category_vortem05.eps}
 	\caption{Snapshot category distribution for a weak warm core criterion and several vorticity thresholds. The Y-axis shows the normalised counts.}
 	\label{fig:temdif-vormin-comp}
 \end{figure}
+% TODO fix max and snapshot category contradiction
+
 
 \section{TC Genesis regions}
-A direct consequence of the observations from Sec.~\ref{sec:warmcore-var} is that with a weaker warm core criterion the TCs can be found already when they have not had much time to intensify. This is relevant because from best track data it is expected that most TCs form in the main development region (MDR) which lies roughly between 10 -- 20 degree North and 20 -- 80 degree West. However, when checking the genesis spots and density in Fig.~\ref{fig:genesis-temdif1}, it can be seen that the MDR is not quite satisfied. When using a weaker warm core criterion, the areas of highest density shift more towards the expected region. This can be interpreted as the successful detection of TCs in earlier development phases. 
+A direct consequence of the observations from Sec.~\ref{sec:warmcore-var} is that with a weaker warm core criterion the TCs can be found already when they have not had much time to intensify. This is relevant because from best track data it is expected that most TCs form in the main development region (MDR) which lies roughly between 10 -- 20 \degree N and 20 -- 80 \degree W. However, when checking the genesis locations and density in Fig.~\ref{fig:genesis-temdif1}, it can be seen that the formation of TCs in ICON is not limited to the MDR. When using a weaker warm core criterion, the areas of highest TC density shift more towards the expected region. This can be interpreted as the successful detection of TCs in earlier development phases. 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.7\textwidth]{img/genesis_plot_temdif1.eps}
 	\caption{Genesis spots and density for a specific parameter combination.}
 	\label{fig:genesis-temdif1}
 \end{figure}
-%TODO check counts instead of density
+
 %\section{Importance of different criteria}
 
 %\begin{enumerate}
