@@ -26,7 +26,7 @@ the earth's surface\cite{dwd-icon}.
 The North Atlantic basin with its surrounding area (between \unit[120]{\degree W}--\unit[15]{\degree W} and \unit[0]{\degree N}--\unit[70]{\degree N}) was simulated from the beginning of May until the beginning of December. The
 output data are saved every six hours.
 Two different kinds of time-lagged ensembles were used. Both used ERA5
-reanalysis data for the initial weather state and the 6-hourly boundary
+reanalysis data from the year 2013 for the initial weather state and the 6-hourly boundary
 conditions. The reference ensemble (ref) used the snapshot of the current time step as boundary conditions. The second ensemble (rm) used
 monthly rolling mean boundary conditions based on the average of the same reanalysis data during the timespan 15 days before and after the current timestep. 
 The members within each of these two ensembles were created by varying the
@@ -36,6 +36,19 @@ The output data from each run is mapped from the icosahedral to a
 Latitude-Longitude grid to facilitate distance calculations.
 Finally, this results in 20 separate simulation runs that can be analyzed for
 TCs.
+
+\begin{tabular}{llllll}
+\toprule
+label &               date & slpdis & temdif & temdis & vormin \\
+\midrule
+   S0 &  Sep 09 2013 18:00 &    +0\% &   -50\% &   +90\% &   -87\% \\
+   S1 &  Sep 10 2013 00:00 &    +0\% &   -18\% &   +56\% &   -87\% \\
+   S2 &  Sep 10 2013 06:00 &    +0\% &   +38\% &   +67\% &   -87\% \\
+   S3 &  Sep 10 2013 12:00 &    +0\% &   +50\% &   +43\% &   -87\% \\
+   S4 &  Sep 12 2013 00:00 &    +0\% &    -5\% &   +60\% &  +260\% \\
+   S5 &  Sep 16 2013 18:00 &    +0\% &   -25\% &    -5\% &    +0\% \\
+\bottomrule
+\end{tabular}
 
 \section{Algorithm}
 An existing algorithm implemented by Bernhard Enz and inspired by \cite{orig-tracking} was improved in regards to runtime, robustness and

@@ -37,25 +37,25 @@ Even with the application of the SST-criterion, unreasonable TC tracks remain. F
 In Sec.~\ref{sec:noise}, it was found that with a sufficiently strong warm core condition the tracks appear in reasonable areas. Before comparing the algorithm output for different parameter combinations, it still remains to be shown that the produced tracks actually follow TCs and not other low pressure systems. For this purpose, ten different storms were randomly chosen. For these storms the radial, tangential and vertical wind and the sea level pressure were visualised in the azimuthal mean. It was found that all storms qualitatively exhibit the physically expected structure that was described in Sec.~\ref{sec:physics}. The resulting plots for a representative storm can be seen in Fig.~\ref{fig:azimean}.
 
 \begin{figure}[ht]
-\centering
-\begin{subfigure}{.5\linewidth}
-    \centering
-    \includegraphics[width=0.75\linewidth]{img/tight09279566radwind20130706T120000Z.eps}
-\end{subfigure}%
-\begin{subfigure}{.5\linewidth}
-    \centering
-    \includegraphics[width=0.75\linewidth]{img/tight09279566tanwind20130706T120000Z.eps}
-\end{subfigure}
-\begin{subfigure}{.5\linewidth}
-    \centering
-    \includegraphics[width=0.75\linewidth]{img/tight09279566verwind20130706T120000Z.eps}
-\end{subfigure}%
-\begin{subfigure}{.5\linewidth}
-    \centering
-    \includegraphics[width=0.75\linewidth]{img/tight09279566pres_msl20130706T120000Z.eps}
-\end{subfigure}
-\caption[short]{Azimuthal mean plots. From left to right and top to bottom: radial wind, tangential wind, vertical wind and sea level pressure. The vertical black line marks the radius of maximum wind.}
-\label{fig:azimean}
+	\centering
+	\begin{subfigure}{.5\linewidth}
+		\centering
+		\includegraphics[width=0.75\linewidth]{img/tight09279566radwind20130706T120000Z.eps}
+	\end{subfigure}%
+	\begin{subfigure}{.5\linewidth}
+		\centering
+		\includegraphics[width=0.75\linewidth]{img/tight09279566tanwind20130706T120000Z.eps}
+	\end{subfigure}
+	\begin{subfigure}{.5\linewidth}
+		\centering
+		\includegraphics[width=0.75\linewidth]{img/tight09279566verwind20130706T120000Z.eps}
+	\end{subfigure}%
+	\begin{subfigure}{.5\linewidth}
+		\centering
+		\includegraphics[width=0.75\linewidth]{img/tight09279566pres_msl20130706T120000Z.eps}
+	\end{subfigure}
+	\caption[short]{Azimuthal mean plots. From left to right and top to bottom: radial wind, tangential wind, vertical wind and sea level pressure. The vertical black line marks the radius of maximum wind.}
+	\label{fig:azimean}
 \end{figure}
 % TODO ADD TEMPERATURE ANOMALY
 
@@ -105,7 +105,7 @@ It was expected that the vorticity threshold should influence the distribution o
 
 
 \section{TC Genesis regions}
-A direct consequence of the observations from Sec.~\ref{sec:warmcore-var} is that with a weaker warm core criterion the TCs can be found already when they have not had much time to intensify. This is relevant because from best track data it is expected that most TCs form in the main development region (MDR) which lies roughly between 10 -- 20 \degree N and 20 -- 80 \degree W. However, when checking the genesis locations and density in Fig.~\ref{fig:genesis-temdif1}, it can be seen that the formation of TCs in ICON is not limited to the MDR. When using a weaker warm core criterion, the areas of highest TC density shift more towards the expected region. This can be interpreted as the successful detection of TCs in earlier development phases. 
+A direct consequence of the observations from Sec.~\ref{sec:warmcore-var} is that with a weaker warm core criterion the TCs can be found already when they have not had much time to intensify. This is relevant because from best track data it is expected that most TCs form in the main development region (MDR) which lies roughly between 10 -- 20 \degree N and 20 -- 80 \degree W. However, when checking the genesis locations and density in Fig.~\ref{fig:genesis-temdif1}, it can be seen that the formation of TCs in ICON is not limited to the MDR. When using a weaker warm core criterion, the areas of highest TC density shift more towards the expected region. This can be interpreted as the successful detection of TCs in earlier development phases.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.7\textwidth]{img/genesis_plot_temdif1.eps}
@@ -113,16 +113,32 @@ A direct consequence of the observations from Sec.~\ref{sec:warmcore-var} is tha
 	\label{fig:genesis-temdif1}
 \end{figure}
 
-%\section{Importance of different criteria}
+\section{Track occurrence frequency }
+It has been shown that the choice of parameters affects typical distributions like the lifetime and intensity of the found TCs. With the purpose of assessing the effect of different warm core criteria on the length of the tracks, the point occurrence frequency was visualised. This quantity is the frequency of a specific location at a certain time being recognised as part of a TC track. Specifically, it evaluates to 1 if all parameter combinations determine a point to be a TC and to 0.5 if only the half of them do. The tracks shown in Fig.~\ref{fig:occ-prob} are determined using the parameter combinations from Tab.~\ref{tab:occ-prob-params}.
 
-%\begin{enumerate}
-%    \item which criteria have a large impact on the found tcs
-%    \item what are interesting thresholds
-%    \item Include fascinating plots
-%\end{enumerate}
-
-
-%\section{Recommended parameter combination}
-%\begin{enumerate}
-%    \item propose combination of parameters for robust search
-%\end{enumerate}
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\textbf{parameter} & \textbf{unit} & \textbf{values} \\ \hline
+		temdif             & K             & 0.5, 1 ,1.5     \\
+		temdis             & m             & 200000          \\
+		slpdis             & m             & 100000          \\
+		vormin             & 1/s           & $10^{-5}$
+		\\
+		\hline
+	\end{tabular}
+	\caption{Parameter combinations used for occurrence frequency plots in Fig.~\ref{fig:occ-prob}.}
+	\label{tab:occ-prob-params}
+\end{table}
+It can be observed that the weaker warm core criterion tracks TCs that are found by only a small part of the parameter combinations. Furthermore, the ends of TC tracks that are found in all of the three plots are longer for the lower values of temdif. Therefore, the weaker warm core criterion enables tracking in earlier development phases. This observation will be made more precise in the following section.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\textwidth]{img/tc_tracks_occ_prob_pid_109_temdif_05.png}
+	\\[\smallskipamount]
+	\includegraphics[width=0.6\textwidth]{img/tc_tracks_occ_prob_pid_149_temdif_10.png}
+	\\[\smallskipamount]
+	\includegraphics[width=0.6\textwidth]{img/tc_tracks_occ_prob_pid_189_temdif_15.png}
+	\caption{Tracks from all ensemble members for the parameter combinations in Tab.~\ref{tab:occ-prob-params}.}
+	\label{fig:occ-prob}
+\end{figure}
