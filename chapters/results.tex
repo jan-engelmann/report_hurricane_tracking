@@ -118,7 +118,7 @@ A direct consequence of the observations from Sec.~\ref{sec:warmcore-var} is tha
 \end{figure}
 
 \section{Track occurrence frequency }
-It has been shown that the choice of parameters affects typical distributions like the lifetime and intensity of the found TCs. With the purpose of assessing the effect of different warm core criteria on the length of the tracks, the point occurrence frequency was visualised. This quantity is the frequency of a specific location at a certain time being recognised as part of a TC track. Specifically, it evaluates to 1 if all parameter combinations determine a point to be a TC and to 0.5 if only the half of them do. The tracks shown in Fig.~\ref{fig:occ-prob} are determined using the parameter combinations from Tab.~\ref{tab:occ-prob-params}.
+It has been shown that the choice of parameters affects typical distributions like the lifetime and intensity of the found TCs. With the purpose of assessing the effect of different warm core criteria on the length of the tracks, the point occurrence frequency was visualised. This quantity is the frequency of a specific location at a certain time being recognised as part of a TC track. Specifically, it evaluates to 1 if all parameter combinations determine a point to be a TC and to 0.5 if only half of them do. The tracks shown in Fig.~\ref{fig:occ-prob} are determined using the parameter combinations from Tab.~\ref{tab:occ-prob-params}.
 
 \begin{table}[ht]
 	\centering
@@ -150,11 +150,11 @@ It can be observed that the weaker warm core criterion tracks TCs that are found
 \section{Matching TC tracks across parameter combinations}
 So far the effects of different parameter variations have ben thoroughly analysed. However, it still remains to be seen if different parameter combinations identify the same TCs. In order to achieve this, different tracks were matched according to the following procedure:
 \begin{itemize}
-  \item the track of a certain TC was chosen as a base track
-  \item the point of maximum wind of this track was found
+  \item choose the track of a certain TC as a base track
+  \item find the point of maximum wind of this track
   \item match tracks found in the same simulation run created with different parameter combinations if: they have an entry at the same time like the maximum wind entry of the base track and at a position within \unit[70]{km}
 \end{itemize}
-Finally, all tracks, their start- and end-points, the TC intensity and the occurrence frequency within the family of tracks were plotted. This analysis was performed on 100 tracks sampled from all parameter combinations and for 54 tracks that were found using the original parameter combination. A resulting plot from the first selection can be seen in Fig.~\ref{fig:matching_plot_cat4}.\newline
+Finally, all tracks, their start- and end-points, the TC intensity and the occurrence frequency within the family of tracks were plotted. This analysis was performed on 100 tracks sampled from all parameter combinations and for 58 tracks that were found using the original parameter combination. A resulting plot from the first selection can be seen in Fig.~\ref{fig:matching_plot_cat4}.\newline
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.9\textwidth]{img/matching_plot_ref_02_tc99554_param_id353_cat4.png}
@@ -180,7 +180,7 @@ The previous discussion suggests that a more general criterion might be reached 
   \text{warmcore}_i = \frac{\text{temdif}_i}{\max_{i}\{ \text{temdif}_i\}} - 3 \times \frac{\text{temdis}_i}{\max_i\{ \text{temdis}_i\}}
   \label{eq:warmcore}
 \end{equation}
-With the goal of relating the two parameters temdif and temdis, both were first max-normalised. Furthermore, due to their physical meanings, the new warm-core criterion has to be proportional to temdif and inversely proportional to temdis. Finally, the factor three on the temdis term was determined through trial and error.
+With the goal of relating the two parameters temdif and temdis, both were first max-normalised. Furthermore, due to their physical meanings, the new warm-core criterion has to be proportional to temdif and inversely proportional to temdis. A more pronounced temperature anomaly leads to a stronger warm core criterion. A larger area that is used to calculate the environment temperature on the other hand, poses a weaker requirement to the warm core of the TC. Finally, the factor three on the temdis term was determined through trial and error.
 Fig.~\ref{fig:clustering} shows a plot of the relationship between the vorticity and the new warm-core criterion for the different start-points. Although the clustering is in no way satisfactory, it can be seen that the means of the warm-core criterion of points S0-S4 are increasing. Furthermore, with a combination of the minimum vorticity threshold with the new warm-core criterion S5 can be easily separated from the other locations. Further feature engineering might prove fruitful.
 
 \begin{figure}[!htb]
