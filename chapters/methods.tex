@@ -37,19 +37,6 @@ Latitude-Longitude grid to facilitate distance calculations.
 Finally, this results in 20 separate simulation runs that can be analyzed for
 TCs.
 
-\begin{tabular}{llllll}
-\toprule
-label &               date & slpdis & temdif & temdis & vormin \\
-\midrule
-   S0 &  Sep 09 2013 18:00 &    +0\% &   -50\% &   +90\% &   -87\% \\
-   S1 &  Sep 10 2013 00:00 &    +0\% &   -18\% &   +56\% &   -87\% \\
-   S2 &  Sep 10 2013 06:00 &    +0\% &   +38\% &   +67\% &   -87\% \\
-   S3 &  Sep 10 2013 12:00 &    +0\% &   +50\% &   +43\% &   -87\% \\
-   S4 &  Sep 12 2013 00:00 &    +0\% &    -5\% &   +60\% &  +260\% \\
-   S5 &  Sep 16 2013 18:00 &    +0\% &   -25\% &    -5\% &    +0\% \\
-\bottomrule
-\end{tabular}
-
 \section{Algorithm}
 An existing algorithm implemented by Bernhard Enz and inspired by \cite{orig-tracking} was improved in regards to runtime, robustness and
 readability. The reduced runtime was important to be able to run the algorithm on the
@@ -135,24 +122,17 @@ research question of this project, the algorithm was run for different
 combinations of these parameters. Specifically, all combinations of the values
 in Tab.~\ref{tab:param_combos} were used.
 
-
-% TODO make clear which parameters were actually used. 
-% first idea is to simply put the bernhard run and the huge run as in two tables about the same thing
-% bad idea is to run all combinations again that are relevant
-% should I exclude all combis that were not analyzed in the report? probably!
-% should I exclude only certain variables.
-
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{|l|l|l|}
 		\hline
 		\textbf{parameter} & \textbf{unit} & \textbf{values}        \\ \hline
-		slpdis             & m             & 25000, 50000, 100000   \\
-		vormin             & 1/s           & $10^{-6}$, $10^{-5}$, $10^{-4}$       \\
-		temdif             & K             & 0.5, 0.75, 1, 1.25       \\
-		temdis             & m             & 100000, 200000, 400000 \\ \hline
+		slpdis             & km             & 50, 100, 150, 200   \\
+		vormin             & 1/s           & $10^{-6}$, $10^{-5}$, $10^{-4}$, $10^{-3}$       \\
+		temdif             & K             & 0.5, 0.75, 1, 1.25, 1.5       \\
+		temdis             & km             & 50, 100, 200, 300, 400 \\ \hline
 	\end{tabular}
-	\caption{An exemplary list of parameters which results in 108 (=3*3*4*3) combinations }
+	\caption{List of all parameters which results in 400 (=4*4*5*5) combinations }
 	\label{tab:param_combos}
 \end{table}
 In summary, the algorithm is run with every parameter set on all 20

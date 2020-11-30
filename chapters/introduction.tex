@@ -1,14 +1,3 @@
-% TODO Make 20 different Track matching plots and include them potentially change coloring to see better different tracks
-% TODO Make Intensity vs Occurence plot
-% TODO track matching plot label start end endpoints with color and temdif (?or param_id rather not)
-% TODO Reduce all TC entries to one tracking file
-% - For Hurricanes Category 1 or higher either include or exclude 1 point. Only look at endings of track
-% - Tropical depression stages expect them to be in 20 percent of all combos
-% - Tropical storm expect them to occur in 30% of all combos
-
-
-
-
 \chapter{Introduction}\label{sec:introduction}
 Tropical cyclones (TCs), also known as hurricanes or typhoons, are storms of extreme nature in many regards. Not only are they the most deadly and expensive natural catastrophes in the United States, but also their physics is quite challenging with many open questions remaining\cite{emanuel-summ}.
 However, writing them off merely as a complex threat to civilisation would be over-simplistic. Research has shown that TCs play a crucial role in the global heat balance and moisture circulation\cite{moisture-transport}\cite{global-heat}.
@@ -18,7 +7,7 @@ While tropical cyclones form and intensify above the ocean, they have the larges
 Due to these enormous implications for society and opportunities to save lives and money, active research is happening on tropical cyclone impact reduction. With an unsure impact of climate change on tropical cyclone frequency but an expected increase in their intensity and a trend of urbanisation on the American east-coast, improving the understanding of tropical cyclones is of great importance.
 
 \section{Underlying Physics}\label{sec:physics}
-Tropical cyclones can be classified using the Saffir-Simpson wind scale. It is defined by the maximum wind observed in the TC. Due to their characteristic structure, the maximum wind usually occurs at the eyewall. Using the maximum wind as a means to categorise TCs is motivated by the strong correlation between wind speeds and the inflicted damage\cite{simpson}. The exact categorisation can be seen in Table~\ref{tab:simpson-scale} and the occurrence frequency of the different categories is displayed in Fig.~\ref{fig:cat-climatology}. Tropical depressions are tropical low pressure systems that have a windspeed of less than \unit[17]{m/s}. When they intensify above this threshold they are called tropical storms. At this stage, they are assigned a name for easier communication between the different meteorological institutes and with the public. These tropical systems may already exhibit a physical structure comparable to that of a TC as described below but do not necessarily have to. Once a tropical storm intensifies to a maximum sustained wind speed beyond \unit[33]{m/s} it is called a TC and a category is assigned.
+Tropical cyclones can be classified using the Saffir-Simpson wind scale. It is defined by the maximum wind observed in the TC. Due to their characteristic structure, the maximum wind usually occurs at the eyewall. Using the maximum wind as a means to categorise TCs is motivated by the strong correlation between wind speeds and the inflicted damage\cite{simpson}. The exact categorisation can be seen in Table~\ref{tab:simpson-scale} and the occurrence frequency of the different categories is displayed in Fig.~\ref{fig:cat-climatology}. Tropical depressions (TD) are tropical low pressure systems that have a windspeed of less than \unit[17]{m/s}. When they intensify above this threshold they are called tropical storms (TS). At this stage, they are assigned a name for easier communication between the different meteorological institutes and with the public. These tropical systems may already exhibit a physical structure comparable to that of a TC as described below but do not necessarily have to. Once a tropical storm intensifies to a maximum sustained wind speed beyond \unit[33]{m/s} it is called a TC and a category is assigned.
 
 \begingroup
 \setlength{\tabcolsep}{10pt} % Default value: 6pt
